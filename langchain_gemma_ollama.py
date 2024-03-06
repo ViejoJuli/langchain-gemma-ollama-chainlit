@@ -7,15 +7,15 @@ from langchain.schema.runnable.config import RunnableConfig
 import chainlit as cl
 
 
-@cl.on_chat_start
+@cl.on_chat_start  # chainlit on_chat_star decorator
 async def on_chat_start():
-    
+
     # Sending an image with the local file path
     elements = [
-    cl.Image(name="image1", display="inline", path="gemma.jpeg")
+        cl.Image(name="image1", display="inline", path="gemma.jpeg")
     ]
     await cl.Message(content="Hello there, I am Gemma. How can I help you ?", elements=elements).send()
-    model = Ollama(model="gemma:2b")
+    model = Ollama(model="gemma:2b")  # I could provide a different model here
     prompt = ChatPromptTemplate.from_messages(
         [
             (

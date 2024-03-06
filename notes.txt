@@ -1,0 +1,21 @@
+Steps:
+1. Create virtual environment
+python -m venv .venv && source .venv/bin/activate
+
+2. All the .env variables are loaded automatically by chainlit
+
+3. pip install -r requirements to install the requirements
+
+4. Install model with ollama run (ollama runs in http://localhost:11434)
+
+5. run: chainlit run langchain_gemma_ollama.py
+ 
+Definitions:
+
+chainlit: allows to create UI for LLM
+Ollama: allows to run LLM locally. command: ollama run <model_name>
+
+streamlit run app.py
+pip freeze | grep click (bash)
+pip install <package_name> --upgrade
+
